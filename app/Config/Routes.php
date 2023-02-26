@@ -31,13 +31,18 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
 $routes->get('/home/coba', 'Home::coba');
 $routes->get('/coba/test', function(){
     echo "Hello World";
 });
 $routes->get('/coba/(:any)', 'Coba::index/$1');
 $routes->get('/users', "Admin\Users::index");
+// $routes->get('/product')
+$routes->get('/', 'Pages::index');
+$routes->get('/about', 'Pages::about');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
